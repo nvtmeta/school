@@ -10,13 +10,15 @@
 
 <body>
 
-    <label for="Username">Username</label>
-    <input type="text" name="Username" id="txtUsername">
-    <label for="Username">Password</label>
-    <input type="text" name="Password" id="txtPassword">
+    <form onsubmit="handleSubmit()" id="form">
+        <label for="Username">Username</label>
+        <input type="text" name="Username" id="txtUsername">
+        <label for="Username">Password</label>
+        <input type="text" name="Password" id="txtPassword">
 
-    <button onclick="Login()">Login</button>
-    <button onclick="resetForm()">Reset</button>
+        <button onclick="Login()">Login</button>
+        <button onclick="resetForm()">Reset</button>
+    </form>
 
 </body>
 
@@ -26,6 +28,7 @@
         let password = document.getElementById('txtPassword').value
         console.log(userName, password)
         if (userName === 'Admin' && password === 'Admin123#') {
+            window.location.href = 'http://www.google.com';
             alert('Dang nhap thanh cong')
         } else {
             alert('dang nhap that bai')
@@ -33,8 +36,11 @@
     }
 
     function resetForm() {
-        let username = document.getElementById('txtUsername').value
-        username.focus()
+        document.getElementById("form").addEventListener("click", function (event) {
+            event.preventDefault()
+        });
+        const form = document.getElementById("form")
+        form.reset()
     }
 </script>
 
