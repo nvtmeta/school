@@ -6,13 +6,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- test git pull -->
 </head>
 
 <body>
-    <h1>sadsadas</h1>
+
+    <label for="Username">Username</label>
+    <input type="text" name="Username" id="txtUsername">
+    <label for="Username">Password</label>
+    <input type="text" name="Password" id="txtPassword">
+
+    <button onclick="Login()">Login</button>
+    <button onclick="resetForm()">Reset</button>
+
 </body>
-<script src="./index.js" type="module">
+
+<script>
+    function Login() {
+        let userName = document.getElementById('txtUsername').value
+        let password = document.getElementById('txtPassword').value
+        console.log(userName, password)
+        if (userName === 'Admin' && password === 'Admin123#') {
+            alert('Dang nhap thanh cong')
+        } else {
+            alert('dang nhap that bai')
+        }
+    }
+
+    function resetForm() {
+        let username = document.getElementById('txtUsername').value
+        username.focus()
+    }
 </script>
 
 </html>
