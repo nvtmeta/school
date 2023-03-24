@@ -6,86 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        .username {
-            border-radius: 10px;
-            font-size: 20px;
-            border: 1px solid red;
-            padding: 10px;
-
-        }
-
-        .password {
-            border-radius: 10px;
-            font-size: 20px;
-            border: 1px solid yellowgreen;
-            padding: 10px;
-
-        }
-
-        .loginBtn {
-            border-radius: 10px;
-            font-size: 14px;
-            background-color: #ccc;
-            padding: 10px;
-            margin-top: 20px;
-            margin-right: 10px;
-        }
-
-        .resetBtn {
-            border-radius: 10px;
-            font-size: 14px;
-            background-color: #ccc;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        .container-input {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            cursor: pointer;
-
-        }
-    </style>
 </head>
 
 <body>
-
-    <form onsubmit="handleSubmit()" id="form">
-        <div class="container-input">
-            <label for="Username">Username</label>
-            <input class="username" type="text" name="Username" id="txtUsername">
-            <label for="Username">Password</label>
-            <input class="password" type="text" name="Password" id="txtPassword">
-
-        </div>
-        <button class="loginBtn" onclick="Login()">Login</button>
-        <button class="resetBtn" onclick="resetForm()">Reset</button>
-    </form>
-
+    <h1>this is main</h1>
 </body>
-
-<script>
-    function Login() {
-        let userName = document.getElementById('txtUsername').value
-        let password = document.getElementById('txtPassword').value
-        console.log(userName, password)
-        if (userName === 'Admin' && password === 'Admin123#') {
-            window.location.href = "Home.html";
-            alert('Dang nhap thanh cong')
-        } else {
-            alert('dang nhap that bai')
-        }
-    }
-
-    function resetForm() {
-        document.getElementById("form").addEventListener("click", function (event) {
-            event.preventDefault()
-        });
-        const form = document.getElementById("form")
-        form.reset()
-    }
-</script>
 
 </html>
