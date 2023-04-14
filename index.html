@@ -10,6 +10,43 @@
 
 <body>
     <h1>this is main</h1>
+
+    <div class="app-form-group">
+        <input id="inputContactNo" class="app-form-control inputContactNo" placeholder="CONTACT NO">
+
+        <div class="app-form-group buttons">
+            <button class="app-form-button">CANCEL</button>
+            <button class="app-form-button" onClick="handleClick()">SEND</button>
+        </div>
+    </div>
+
+    <!-- <input id="inpufdgdfgft" class="input" placeholder="nhap test" />
+    <button class="" onclick="handleClick()">send</button> -->
 </body>
+
+
+<script>
+
+    // var checkValidate = document.getElementByClassName("inputContactNo")[0]
+
+    function handleClick() {
+        var input = document.getElementById("inputContactNo").value
+        console.log(input)
+        if (input.length > 5) {
+            if (input.includes('Aa')) {
+                console.log('ok')
+            } else {
+                console.log('cut')
+            }
+        } else {
+            console.log('error')
+        }
+
+    }
+
+
+
+
+</script>
 
 </html>
