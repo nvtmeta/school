@@ -12,11 +12,11 @@
     <h1>this is main</h1>
 
     <div class="app-form-group">
-        <input id="inputContactNo" class="app-form-control inputContactNo" placeholder="CONTACT NO">
+        <input id="phone" class="app-form-control inputContactNo" placeholder="CONTACT NO">
 
         <div class="app-form-group buttons">
             <button class="app-form-button">CANCEL</button>
-            <button class="app-form-button" onClick="handleClick()">SEND</button>
+            <button class="app-form-button" onClick="phonemt()">SEND</button>
         </div>
     </div>
 
@@ -29,20 +29,40 @@
 
     // var checkValidate = document.getElementByClassName("inputContactNo")[0]
 
-    function handleClick() {
-        var input = document.getElementById("inputContactNo").value
-        console.log(input)
-        if (input.length > 5) {
-            if (input.includes('Aa')) {
-                console.log('ok')
-            } else {
-                console.log('cut')
-            }
+    // function handleClick() {
+    //     var input = document.getElementById("inputContactNo").value
+    //     if (input.length < 5) {
+    //         console.log('error')
+    //     } else {
+    //         console.log('ok')
+    //     }
+    //     console.log(typeof input)
+
+    // }
+
+    function phonemt() {
+        var phone = document.getElementById('phone').value
+        const regex = /(?=.*[a-z])(?=.*[A-Z])/;
+        const numberregex = /^([^0-9]*)$/;
+
+        alert(numberregex.test(phone))
+
+        if (phone.length > 5 && regex.test(phone)) {
+            alert('ok')
+
         } else {
-            console.log('error')
+            alert('error')
+
         }
 
+        //var chuoiKiemTra = 'Aa'
+        //if (chuoiNhapVao.length != 12 && chuoiNhapVao.indexOf(chuoiKiemTra)) {
+        //    alert('chuỗi nhập vào cần = 12 kí tự và có chứa chuỗi Aa')
+        //}
     }
+
+
+
 
 
 
